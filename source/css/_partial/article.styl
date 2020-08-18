@@ -63,9 +63,24 @@
     /*color: color-link*/
 
 .article-readmore
-  width: 100%
-  margin: 0 !important
-  text-align: right
+width: 100%
+  margin: 1.6em 0 !important
+  /*text-align: right*/
+
+.article-readmore a
+  display: inline-block
+  line-height: 1em
+  padding: 6px 15px
+  border-radius: 15px
+  background: color-background
+  color: #737373 !important
+  text-shadow: 0 1px #fff
+  text-decoration: none
+  &:hover
+    background: color-link
+    color: #fff !important
+    text-decoration: none !important
+    text-shadow: 0 1px darken(color-link, 20%)
   
 
 .article-entry
@@ -81,7 +96,6 @@
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
     margin: line-height-title 0
-    /* color: #f60 */
   a
     color: color-link
     text-decoration: none
@@ -109,14 +123,16 @@
     border-bottom: 1px solid color-border
     padding: 10px 0
   blockquote
-    font-family: font-serif
+    /*font-family: font-serif*/
+    font-family: SourceHanCodeJP
     font-style: italic
     margin: line-height 20px
     background-color: #f6f6f6
     footer
       font-size: font-size
       margin: line-height 0
-      font-family: font-sans
+      /*font-family: font-sans*/
+      font-family: SourceHanCodeJP
       cite
         &:before
           content: "—"
@@ -223,7 +239,8 @@
     padding-right: 6px
 
 .article-disclaimer
-  font-family: font-serif
+  /*font-family: font-serif*/
+  font-family: SourceHanCodeJP
   font-style: italic
   margin: line-height 20px
   background-color: #f6f6f6
