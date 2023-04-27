@@ -28,7 +28,9 @@
           </p>
         <% } %>
       <% } else { 
-        if ((config.toc && config.toc.enabled) || (post.toc && post.toc.enabled)){ 
+        if (post.toc && !post.toc.enabled){
+          //disabled toc for this post
+        } else if ((config.toc && config.toc.enabled) || (post.toc && post.toc.enabled)){ 
           var tocOptions = Object.assign({}, config.toc, post.toc);  
         %>
         <div class="toc-wrapper">
