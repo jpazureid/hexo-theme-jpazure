@@ -27,7 +27,13 @@
             <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
           </p>
         <% } %>
-      <% } else { %>
+      <% } else { 
+        if ((config.toc && config.toc.enabled) || (post.toc && post.toc.enabled)){ 
+          var tocOptions = Object.assign({}, config.toc, post.toc);  
+        %>
+        <h2>目次</h2>
+        <%- toc(post.content, tocOptions) %>
+        <% } %>
         <%- post.content %>
       <% } %>
       <% if (!post.disableDisclaimer && config.disclaimer){ %>
