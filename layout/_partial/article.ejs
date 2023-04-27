@@ -31,8 +31,10 @@
         if ((config.toc && config.toc.enabled) || (post.toc && post.toc.enabled)){ 
           var tocOptions = Object.assign({}, config.toc, post.toc);  
         %>
-        <h2>目次</h2>
-        <%- toc(post.content, tocOptions) %>
+        <div class="toc-wrapper">
+          <h2>目次</h2>
+          <%- toc(post.content, tocOptions) %>
+        </div>
         <% } %>
         <%- post.content %>
       <% } %>
