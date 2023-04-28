@@ -34,7 +34,7 @@
           var tocOptions = Object.assign({}, config.toc, post.toc);  
         %>
         <div class="toc-wrapper">
-          <h2>目次</h2>
+          <h2 id="toc-header" class="toc-header">この記事の内容</h2>
           <%- toc(post.content, tocOptions) %>
         </div>
         <% } %>
