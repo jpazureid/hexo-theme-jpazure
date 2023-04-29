@@ -11,7 +11,7 @@
       <div class="article-share">
         Published: 
         <%- partial('post/date', {class_name: 'article-date-single', date_format: null}) %>
-        <% if (github) { %>
+        <% if (github && config.github.show_additional_info) { %>
           <%- partial('post/githubinfo', {class_name: 'article-date-single', source_url: github.sourceUrl }) %>
         <% } %>
         <%- partial('post/category') %>
