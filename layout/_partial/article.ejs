@@ -12,7 +12,7 @@
         Published: 
         <%- partial('post/date', {class_name: 'article-date-single', date_format: null}) %>
         <% if (github) { %>
-          <%- partial('post/updated', {class_name: 'article-date-single', source_url: github.sourceUrl }) %>
+          <%- partial('post/githubinfo', {class_name: 'article-date-single', source_url: github.sourceUrl }) %>
         <% } %>
         <%- partial('post/category') %>
         <% if(github){
