@@ -9,8 +9,11 @@
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
       <div class="article-share">
-        Last Update: 
+        Published: 
         <%- partial('post/date', {class_name: 'article-date-single', date_format: null}) %>
+        <% if (github && config.github.show_additional_info) { %>
+          <%- partial('post/githubinfo', {class_name: 'article-date-single', source_url: github.sourceUrl }) %>
+        <% } %>
         <%- partial('post/category') %>
         <% if(github){
         %>
@@ -27,7 +30,20 @@
             <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
           </p>
         <% } %>
-      <% } else { %>
+      <% } else { 
+        if (post.toc && !post.toc.enabled){
+          //disabled toc for this post
+        } else if ((config.toc && config.toc.enabled) || (post.toc && post.toc.enabled)){ 
+          var tocOptions = Object.assign({}, config.toc, post.toc);  
+        %>
+        <% var tocContent =toc (post.content, tocOptions);
+          if (tocContent) { %>
+        <div class="toc-wrapper">
+          <h2 id="toc-header" class="toc-header">この記事の内容</h2>
+          <%- tocContent %>
+        </div>
+          <% } 
+        } %>
         <%- post.content %>
       <% } %>
       <% if (!post.disableDisclaimer && config.disclaimer){ %>
