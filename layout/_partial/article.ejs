@@ -36,11 +36,14 @@
         } else if ((config.toc && config.toc.enabled) || (post.toc && post.toc.enabled)){ 
           var tocOptions = Object.assign({}, config.toc, post.toc);  
         %>
+        <% var tocContent =toc (post.content, tocOptions);
+          if (tocContent) { %>
         <div class="toc-wrapper">
           <h2 id="toc-header" class="toc-header">この記事の内容</h2>
-          <%- toc(post.content, tocOptions) %>
+          <%- tocContent %>
         </div>
-        <% } %>
+          <% } 
+        } %>
         <%- post.content %>
       <% } %>
       <% if (!post.disableDisclaimer && config.disclaimer){ %>
