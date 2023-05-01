@@ -134,6 +134,7 @@ width: 100%
     max-width: 100%
     height: auto
     display: block
+    border: 1px solid black
     /* margin: auto */ /* [makotsur] delete style 'margin auto = centering style' */
   iframe
     border: none
@@ -492,4 +493,25 @@ div.alert
         content: "\f059"
         font-family: FontAwesome
         padding-right: 6px
-    
+
+h2.toc-header
+  cursor: pointer
+  &:before
+    position: absolute
+    left: -1em
+    content: "\f054"
+    font-family: FontAwesome
+    margin-right: 0.5em
+    color: color-border
+    font-size: 0.6em
+  &.toc-is-expanded
+    &:before
+      content: "\f078"
+
+ol.toc
+  border-inline-start: 1px solid
+  border-left-color: color-border
+  padding-left: 1em
+  li
+    list-style-type: none
+  
